@@ -7,6 +7,12 @@ This is an unofficial Python client implementation for the Formosa Foundation Mo
 
 ## Usage
 
+Install using pypi:
+
+```shell
+pip install unofficial-ffm-openai
+```
+
 You can use it similarly to the original OpenAIChat, with a few different parameters:
 
 ```python
