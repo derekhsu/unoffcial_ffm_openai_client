@@ -5,6 +5,11 @@ An unofficial Formosa Foundation Model client implementation based on OpenAI and
 
 This is an unofficial Python client implementation for the Formosa Foundation Model public endpoint, compatible with the OpenAI Python client and LangChain. Currently, it only implements the [Conversation API](https://docs.twcc.ai/docs/user-guides/twcc/afs/afs-modelspace/api-and-parameters/conversation-api) and supports the public endpoint. Note that the synchronous API is not yet implemented.
 
+# Changelog
+
+- 0.1.3 - Support function calls.
+- 0.1.2 - Support embeddings.
+
 ## Usage
 
 Install using pypi:
@@ -32,6 +37,14 @@ chat_ffm = FfmChatOpenAI(
 )
 ```
 
+```python
+from ffm.embeddings import FFMEmbeddings
+
+embedding = FFMEmbeddings(
+    base_url="",
+    api_key="your key")
+```
+
 ## Limitation
 
 Currently, it has only been tested with the following dependencies:
@@ -54,4 +67,3 @@ openai                            1.30.1
 ## TODO
 
 * Full implementation for the synchronous API.
-* Support for function calls.
