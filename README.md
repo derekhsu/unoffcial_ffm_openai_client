@@ -7,6 +7,10 @@ This is an unofficial Python client implementation for the Formosa Foundation Mo
 
 # Changelog
 
+- 0.2.0 
+  - Add a callback for counting token consumption in streaming and non-streaming mode.
+  - Add json error handling for sync streaming mode.
+  - Add token consumption info in the result of streaming and non-streaming mode.
 - 0.1.3 - Support function calls.
 - 0.1.2 - Support embeddings.
 
@@ -44,6 +48,24 @@ embedding = FFMEmbeddings(
     base_url="",
     api_key="your key")
 ```
+
+### Callbacks
+
+You cen use the ffm callbacks as using other callbacks such as openai callback, here is the example:
+
+```python
+from ffm.langchain.callbacks import get_ffm_callback
+
+with get_ffm_callback() as cb:
+    ...do something using llm...
+    
+    total_tokens = cb.total_tokens
+    prompt_tokens = cb.prompt_tokens
+    completion_tokens = cb.completion_tokens
+    successful_requests = cb.successful_requests
+```
+
+* Note: Cost calculation has not been done yet but is in progress.
 
 ## Limitation
 

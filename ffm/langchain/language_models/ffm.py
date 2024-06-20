@@ -191,7 +191,11 @@ class FfmChatOpenAI(BaseChatOpenAI):
                           
                 generation_info = {}
                 if finish_reason := chunk["finish_reason"]:
-                    generation_info["finish_reason"] = finish_reason                    
+                    generation_info["finish_reason"] = finish_reason
+                    generation_info["total_time_taken"] = chunk["total_time_taken"]
+                    generation_info["prompt_tokens"] = chunk["prompt_tokens"]
+                    generation_info["generated_tokens"] = chunk["generated_tokens"]
+                    generation_info["total_tokens"] = chunk["total_tokens"]     
 
                 chunk = _convert_data_to_message_chunk(
                     chunk, default_chunk_class
@@ -226,6 +230,10 @@ class FfmChatOpenAI(BaseChatOpenAI):
                 generation_info = {}
                 if finish_reason := chunk["finish_reason"]:
                     generation_info["finish_reason"] = finish_reason
+                    generation_info["total_time_taken"] = chunk["total_time_taken"]
+                    generation_info["prompt_tokens"] = chunk["prompt_tokens"]
+                    generation_info["generated_tokens"] = chunk["generated_tokens"]
+                    generation_info["total_tokens"] = chunk["total_tokens"]                                                    
 
                 chunk = _convert_data_to_message_chunk(
                     chunk, default_chunk_class
