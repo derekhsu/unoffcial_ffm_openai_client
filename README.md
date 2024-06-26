@@ -7,6 +7,7 @@ This is an unofficial Python client implementation for the Formosa Foundation Mo
 
 # Changelog
 
+- 0.2.1 - [fix] Remove unnecessary import from `chat_completion.py`
 - 0.2.0 
   - Add a callback for counting token consumption in streaming and non-streaming mode.
   - Add json error handling for sync streaming mode.

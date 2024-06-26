@@ -1,6 +1,5 @@
-from networkx import generate_adjlist
 from openai import BaseModel
-from typing import List, Dict, Any
+from typing import Dict, Any
 from openai.types.completion_usage import CompletionUsage
 
 class FfmChatCompletion(BaseModel):
